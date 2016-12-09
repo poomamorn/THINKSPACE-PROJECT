@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--<script src = "/javascripts/meant.js"></script>-->
+<link rel="stylesheet" type="text/css" href="newstyle.css">
+
+
+<script>
+//    var settings = {
+//        "async": true,
+//        "crossDomain": true,
+//        "url": "http://localhost:3000/books/" + input,
+//        "method": "GET",
+//        "headers": {
+//            "cache-control": "no-cache",
+//            "postman-token": "10cc20f9-f3c3-37bd-1921-4d420406a1f6"
+//        },
+//        "data": "{\"id\": 2,\n      \"name\": \"wertyu\",\n      \"author\": \"456\"\n      }"
+//    }
+//
+//    $.ajax(settings).done(function (response) {
+//        console.log(response);
+//        //var te = JSON.parse(response);
+//        //console.log(te.id);
+//       // console.log(te);
+//        //console.log(te.books[0].name);
+//        //document.getElementById("demo").innerHTML = te.books[0].name;
+//        document.getElementById("demo").innerHTML = response.name;
+//    });
+var form = new FormData();
+
+
+var ran= localStorage.getItem("TheName");
+
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost:3000/books/"+ran,
+    "method": "GET",
+    "headers": {
+        "cache-control": "no-cache",
+        "postman-token": "04cf6169-2755-1a6d-13fb-752861c6adde"
+    },
+    "processData": false,
+    "contentType": false,
+    "mimeType": "multipart/form-data",
+    "data": form
+}
+//
+$.ajax(settings).done(function (response) {
+
+    //console.log(response);
+    var te = JSON.parse(response);
+    //console.log(te);
+   // console.log(te.books.name);
+
+    //var ran2 = ran.name;
+    console.log(ran);
+
+
+
+    document.getElementById("demo").innerHTML = localStorage.getItem("TheName");
+});
+</script>
+
+<body>
+<h>This is me page</h>
+<h2>JSON Object Creation in JavaScript</h2>
+
+<p id="demo"></p>
+<p>asdfasf</p>
+
+
+</body>
+</html>

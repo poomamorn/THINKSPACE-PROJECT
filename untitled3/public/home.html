@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Think Space B2S</title>
+  <link rel="stylesheet" type="text/css" href="homestyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <ul class="pages">
+    <li class="login page">
+      <div class="title">
+        <img src="/images/logo.jpg" width="100px" height="100px">
+      </div>
+      <div class="form">
+        <input class="usernameInput" type="text" placeholder="Search" />
+        <br /><br />
+        <a class="search" ><img src="/images/search.png" height="60px" width="60px"></a>
+        <br /><br /><br /><br /><br /><br /><br />
+        <h class="reserve">Reserve Seat</h>
+      </div>
+    </li>
+  </ul>
+ </body>
+
+
+<script>
+  var input="";
+  $(function(){
+    $(".search").click(function(e){
+     // e.preventDefault();
+      input=$(".usernameInput").val();
+      console.log(input);
+
+      localStorage.setItem("TheName",input);
+
+      window.location.replace('/new.html');
+    });
+  });
+  </script>
+</html>
